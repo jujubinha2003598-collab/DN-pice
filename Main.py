@@ -1,3 +1,4 @@
+import random
 from Bioma import Bioma
 from FlorestaTrop import FlorestaTropical
 from Savana import Savana
