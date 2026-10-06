@@ -1,14 +1,16 @@
 class Organismo:
-    def __init__(self, nome, idade, peso, bioma, energia, intensidade_dor):
+    def __init__(self, nome, idade, peso, energia, intensidade_dor):
         self.nome = nome
         self.idade = idade
         self.peso = peso 
-        self.bioma = bioma 
-        self.energia = energia
-        self.intensidade = intensidade_dor
+        self.energia = 100
+        self.intensidade_dor = 0
 
     def movimentar(self, distancia):
-
+        if "Serrapilheira" in self.tipo_solo:
+            return 0.5 
+        elif "":
+            return 1.0
 
     def hidratar(self, quantidade):
 
