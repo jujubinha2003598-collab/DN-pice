@@ -17,8 +17,15 @@ class FlorestaTropical(Bioma):
         self.densidade_copada = densidade_copada
         self.tipo_solo = tipo_solo  
 
-    def gerar_sombra_canopia(self) -> float:
+    def gerar_sombra_canopia(self):
         temp_real = self.calcular_temperatura()
         desconto_termico = (self.densidade_copada / 100) * 3.0
         return round(temp_real - desconto_termico, 1)
 
+    def calcular_temperatura(self):
+        temperatura_atual = random.uniform(self.temp_min, self.temp_max)
+        return round(temperatura_atual, 1)
+
+    def dificuldade_solo(self):
+        return 0.5
+                                                                                                                                                                                                                                                                                                                                                                                                                            

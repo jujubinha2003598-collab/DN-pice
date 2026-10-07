@@ -12,3 +12,7 @@ class Savana(Bioma):
             tipo_solo="Arenoso e poroso (Pobre em nutrientes)" 
         )
         self.nivel_queimada = nivel_queimada
+    
+    def calcular_temperatura(self) -> float:
+        temperatura_atual = random.uniform(self.temp_min, self.temp_max)
+        return round(temperatura_atual, 1)
