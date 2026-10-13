@@ -1,21 +1,20 @@
 from Bioma import Bioma 
-
+import random 
 
 class FlorestaTropical(Bioma):
 
-    def __init__(self, umidade_relativa: float = 85.0, densidade_copada: float = 90.0, tipo_solo: str):
-
+    def __init__(self, tipo_solo: str, umidade_relativa: float = 85.0, densidade_copada: float = 90.0):
         super().__init__(
             nome="Floresta Tropical",
             clima="Equatorial / Tropical Úmido",
             regiao="Amazônia / Bacia do Congo",
             temp_min=22.0,
             temp_max=32.0,
-            especificidade="Canópia densa e solo com serrapilheira"
+            especificidade="Canópia densa e solo com serrapilheira",
+            tipo_solo=tipo_solo
         )
         self.umidade_relativa = umidade_relativa
         self.densidade_copada = densidade_copada
-        self.tipo_solo = tipo_solo  
 
     def gerar_sombra_canopia(self):
         temp_real = self.calcular_temperatura()
@@ -27,5 +26,4 @@ class FlorestaTropical(Bioma):
         return round(temperatura_atual, 1)
 
     def dificuldade_solo(self):
-        return 0.5
-                                                                                                                                                                                                                                                                                                                                                                                                                            
+        return 0.5                                                                                                                                                                                                                                                                                                                                                                                         

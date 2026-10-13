@@ -1,5 +1,6 @@
+from Bioma import Bioma
 class Organismo:
-    def __init__(self, nome, idade, peso, energia, intensidade_dor. bioma):
+    def __init__(self, nome, idade, peso, energia, intensidade_dor, bioma):
         self.nome = nome
         self.idade = idade
         self.peso = peso 
@@ -7,16 +8,16 @@ class Organismo:
         self.intensidade_dor = 0
         self.bioma = bioma
 
-    def movimentar(self, distancia):
-        self.energia -= bioma.dificuldade_solo()
-
+    def movimentar(self, distancia: float):
+        print(f"🏃 {self.nome} começou a se movimentar no bioma {self.bioma.nome}")
+        gasto = self.bioma.dificuldade_solo() * distancia
+        self.energia -= int(gasto)
+        print(f"⚡ Gasto de energia. Energia atual: {self.energia}")
         
-    def hidratar(self, quantidade):
-
+    def hidratar(self, quantidade: str):
+        print(f"💧 {self.nome} bebeu  ({quantidade}) ml de água!")
+        self.energia += 10
     
-    def alimentar(self, quantidade):
-
-
-        
-
-# julia = Organismo(...., Tundra())
+    def alimentar(self, quantidade: str):
+        print(f"🍎 {self.nome} alimentou-se com {quantidade}!")
+        self.energia += 15

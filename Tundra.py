@@ -1,5 +1,5 @@
 from Bioma import Bioma 
-
+import random 
 class Tundra(Bioma):
     
     def __init__(self, espessura_neve: float):
@@ -16,3 +16,7 @@ class Tundra(Bioma):
     def calcular_temperatura(self) -> float:
         temperatura_atual = random.uniform(self.temp_min, self.temp_max)
         return round(temperatura_atual, 1)
+
+    def dificuldade_solo(self):
+        return 1.5
+    
