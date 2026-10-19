@@ -2,8 +2,11 @@ from Organismo import Organismo
 import random 
 
 class Utero():
-    def __init__(self, ):
-        pass
+    def __init__(self, tamanho_utero,  ):
+        self.tamanho_utero = 10
+
 
     def menstruar(self):
-        pass
+        if self.organismo.idade >= 12:
+            if self.organismo.fome <= 80 :
+                if self.organismo.energia <= 40:

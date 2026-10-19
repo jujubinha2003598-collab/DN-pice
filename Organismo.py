@@ -1,7 +1,7 @@
 from Bioma import Bioma
 from Pele import Pele
 class Organismo:
-    def __init__(self, nome, idade, peso, energia, intensidade_dor, bioma):
+    def __init__(self, nome, idade, peso, energia, intensidade_dor, bioma, fome):
         self.nome = nome
         self.idade = idade
         self.peso = peso 
@@ -10,7 +10,7 @@ class Organismo:
         self.bioma = bioma
         self.pele = Pele(200, )
         self.utero = Utero( , )
-
+        self.fome = 100
 
     def movimentar(self, distancia: float):
         print(f"🏃 {self.nome} começou a se movimentar no bioma {self.bioma.nome}")
@@ -24,4 +24,6 @@ class Organismo:
     
     def alimentar(self, quantidade: str):
         print(f"{self.nome} alimentou-se com {quantidade}!")
-        self.energia += 15
+        self.energia += 15    
+
+    def ver_status_saude(self):
