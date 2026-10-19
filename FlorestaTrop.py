@@ -11,7 +11,7 @@ class FlorestaTropical(Bioma):
             temp_min=22.0,
             temp_max=32.0,
             especificidade="Canópia densa e solo com serrapilheira",
-            tipo_solo=tipo_solo
+            tipo_solo=
         )
         self.umidade_relativa = umidade_relativa
         self.densidade_copada = densidade_copada

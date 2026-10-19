@@ -1,9 +1,9 @@
 from Organismo import Organismo
 import random 
 
-class Utero(Organismo):
-    def __init__(self, nome, idade, peso, bioma):
-        super().__init__(nome, idade, peso, bioma)
+class Utero():
+    def __init__(self, ):
+        pass
 
     def menstruar(self):
         pass

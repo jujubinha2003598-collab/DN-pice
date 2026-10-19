@@ -10,6 +10,7 @@ class Tundra(Bioma):
             temp_min=-20.0, 
             temp_max=0.0, 
             especificidade="Permafrost"
+            tipo_solo=
         )
         self.espessura_neve = espessura_neve
         
