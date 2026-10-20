@@ -7,6 +7,10 @@ class Utero():
 
 
     def menstruar(self):
-        if self.organismo.idade >= 12:
+        if self.organismo.idade >= 12 and self.organismo.idade <= 55:
+
             if self.organismo.fome <= 80 :
+
                 if self.organismo.energia <= 40:
+                
+   
