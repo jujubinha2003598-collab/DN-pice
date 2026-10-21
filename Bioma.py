@@ -20,5 +20,4 @@ class Bioma(ABC):
         temp_atual = self.calcular_temperatura()
         print("\n===== DADOS DO BIOMA =====")
         print(f"| Nome: {self.nome} \n| Temperatura: {temp_atual}°C \n| Clima: {self.clima} \n| Região: {self.regiao} \n| Especificidade: {self.especificidade} \n| Tipo do solo: {self.tipo_solo }")
-
  

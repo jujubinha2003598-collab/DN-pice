@@ -49,13 +49,13 @@ class Organismo():
 
     def alimentar(self, escolha):
         if escolha == 1:
-            self.energia += 15
-            self.fome -= 10 
+            self.energia -= 15
+            self.fome += 5 
             print(f"Ops! {self.nome} tinha opção melhor hein.")
 
         elif escolha == 2:
-            self.energia += 15
-            self.fome -= 10 
+            self.energia += 5
+            self.fome -= 5
             print("Foi quase hein! Boa sorte na próxima.")
 
         elif escolha == 3:
@@ -70,14 +70,14 @@ class Organismo():
     
         
     def fazer_nada(self):
-        if self.energia > 0 :
+        if self.energia >=10 :
             self.energia -= 10
-            print(f"Deu mole perdeu energia. Energia atual {self.energia}")
+            print(f"Deu mole, perdeu energia. Energia atual {self.energia}")
 
         elif (self.energia == 0) and (self.fome == 100):
-            print(f"Você está sem energia e com fome. {self.nome} não sobreviveu.")
+            print(f"Você está sem energia e com muita fome. {self.nome} não sobreviveu.")
 
-        elif (self.energia == 0) and (self.fome >= 60):
+        elif (self.energia == 0) and (self.fome <= 60):
             print(f"Você está sem energia e com fome. {self.nome} melhor comer e se hidratar.")
             
 

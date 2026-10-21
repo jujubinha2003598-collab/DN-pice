@@ -1,4 +1,4 @@
-import random ######Vai usar onde????
+import random
 from Bioma import Bioma
 from FlorestaTrop import FlorestaTropical
 from Savana import Savana
@@ -12,7 +12,7 @@ sistema = Sistema()
 
 print("Seja bem vindo(a) ao nosso Jogo do DNÁpice! \n Escolha seu bioma, avatar, e viva uma aventura cheia de aprendizados!")
 
-opcao = int(input("O que deseja fazer? \n1)Criar um avatar \n2)Ver status do avatar \n3)Escolher um bioma"))
+opcao = int(input("O que deseja fazer? \n1)Criar um avatar \n2)Ver status do avatar \n3)Escolher um bioma \n4)Ver status do bioma \n5)Fazer nada (POR FAVOR, APENAS SE O SEU AVATAR EXISTIR) \n)Sair"))
 
 if opcao == 1:
         nome = input("Dê um nome:")
@@ -33,7 +33,17 @@ elif opcao == 3:
         escolha = int(input("Escolha o número do seu bioma:"))
         sistema.criar_bioma(escolha)
 
-
+elif opcao == 4:
+        sistema.exibir_dados_bioma()
+        
+elif opcao == 5:
+        obj_avatar.fazer_nada()
+        
+#elif opcao == :#sair
+ #       break
+        
+else:
+        print("Opção inválida!")
 
 
 
@@ -68,7 +78,7 @@ elif opcao == 3:
 
 
         escolha = int(input("Escolha o número da sua comida: "))
-        obj_organismo.alimentar(escolha)
+        obj_avatar.alimentar(escolha)
 
 
         print("\n--- Menu de Proteção para a Pele ---\n")
@@ -77,7 +87,7 @@ elif opcao == 3:
         print("3. Blusa de frio")
         
         escolha = int(input("Escolha o número da sua proteção:"))
-        obj_organismo.proteger(escolha)
+        obj_avatar.proteger(escolha)
 
         print("\n--- Menu de Hidratação ---\n")
         print("1. Água Potável")
@@ -85,7 +95,7 @@ elif opcao == 3:
         print("3. Água suja")
         
         escolha = int(input("Escolha o número da sua hidratação:"))
-        obj_organismo.hidratar(escolha)
+        obj_avatar.hidratar(escolha)
 
 
 

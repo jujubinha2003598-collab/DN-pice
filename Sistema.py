@@ -1,3 +1,9 @@
+from Bioma import Bioma
+from FlorestaTrop import FlorestaTropical
+from Savana import Savana
+from Tundra import Tundra
+from Organismo import Organismo
+
 class Sistema():
     def __init__(self):
         self.avatares = []
@@ -23,3 +29,11 @@ class Sistema():
             espessura_neve = int(input("Informe a espessura da neve:"))
             obj_bioma_t = Tundra(espessura_neve)#cria o bioma
             self.biomas.append(obj_bioma_t)#adiciona na lista de biomas
+            
+    def exibir_dados(self):
+        print("\n===== DADOS DO BIOMA =====")
+        for bioma in self.biomas:
+            bioma.temp_atual = self.calcular_temperatura()
+            print(f"| Nome: {bioma.nome} \n| Temperatura: {bioma.temp_atual}°C \n| Clima: {bioma.clima} \n| Região: {bioma.regiao} \n| Especificidade: {bioma.especificidade} \n| Tipo do solo: {self.tipo_solo }")
+            if bioma.nome == "Floresta Tropical":
+                print(f"| Umidade relativa: {bioma.umidade_relativa} \n| Densidade da Copada: {bioma.densidade_copada}")

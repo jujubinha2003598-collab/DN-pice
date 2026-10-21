@@ -1,4 +1,4 @@
-main
+#main
 
 import datetime
 from sistema import Sistema
