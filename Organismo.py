@@ -17,8 +17,6 @@ class Organismo():
         self.pele = Pele (melanina = random.choice(["baixa", "média", "alta"])) 
         self.utero = Utero()
         self.fome = 0
-    
-    def criar_organismo(self):
 
 
     def movimentar(self, distancia: float):
@@ -29,6 +27,7 @@ class Organismo():
             gasto += gasto * (quilos_extras * 0.01)
         self.energia -= int(gasto)
         print(f"⚡ Gasto de energia. Energia atual: {self.energia}")
+
 
     def hidratar(self, escolha):
         if escolha == 1:
@@ -68,10 +67,6 @@ class Organismo():
             print("Opção inválida! Você não comeu nada.")
             self.fome += 15
             self.energia -= 15 
-
-    def ver_status_saude(self):
-        print("\n===== Status de Saúde =====\n")
-        print(f"| Nome: {self.nome} \n| Idade: {self.idade} anos \n| Peso: {self.peso} kg \n| Energia: {self.energia} \n| Fome: {self.fome} \n| Intensidade da dor: {self.intensidade_dor}")
     
         
     def fazer_nada(self):
@@ -84,6 +79,7 @@ class Organismo():
 
         elif (self.energia == 0) and (self.fome >= 60):
             print(f"Você está sem energia e com fome. {self.nome} melhor comer e se hidratar.")
+            
 
     def proteger(self, escolha):
         if escolha == 1:

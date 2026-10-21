@@ -6,25 +6,48 @@ from Tundra import Tundra
 from Organismo import Organismo
 from Pele import Pele 
 from Utero import Utero
+from Sistema import Sistema
 
 sistema = Sistema()
 
 print("Seja bem vindo(a) ao nosso Jogo do DNÁpice! \n Escolha seu bioma, avatar, e viva uma aventura cheia de aprendizados!")
 
-opcao = int(input("O que deseja fazer? \n1)Criar um avatar \n2)"))
+opcao = int(input("O que deseja fazer? \n1)Criar um avatar \n2)Ver status do avatar \n3)Escolher um bioma"))
 
 if opcao == 1:
         nome = input("Dê um nome:")
         idade = input("Informe a idade:")
         peso = input("Informe o peso:")
-        obj
+        obj_avatar = Organismo(nome, idade, peso)#criando o avatar
+        sistema.avatares.append(obj_avatar)#adicionando o avatar criado na lista de avatares
+        print("Avatar criado com sucesso!")
 
-print("\n--- Biomas ---\n")
-print("1. Floresta Tropical")
-print("2. Savana")
-print("3. Tundra")
-escolha = int(input("Escolha o número do seu bioma:"))
-obj_organismo.proteger(escolha)
+elif opcao == 2:
+        sistema.ver_status_saude()
+
+elif opcao == 3:
+        print("\n--- Biomas ---\n")
+        print("1. Floresta Tropical")
+        print("2. Savana")
+        print("3. Tundra")
+        escolha = int(input("Escolha o número do seu bioma:"))
+        sistema.criar_bioma(escolha)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         print("\n--- Menu de Comidas ---\n")
         print("1. Carne podre")
