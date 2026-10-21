@@ -10,8 +10,12 @@ class Utero():
         if self.organismo.idade >= 12 and self.organismo.idade <= 55:
 
             if self.organismo.fome <= 80 :
+                print("Você está menstruando, mas está com muita fome. Cuidado com a saúde!")
 
                 if self.organismo.energia <= 40:
                     print("Você está menstruando, mas está com pouca energia. Cuidado com a saúde!")
-                else:
-                    print("Você não está menstruando, mas está com pouca energia. Cuidado com a saúde!")
+                    
+            else:
+               
+        else:
+            print("Você não está menstruando, pois não está na idade fértil.")              
