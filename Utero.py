@@ -6,9 +6,9 @@ class Utero():
         self.tamanho_utero = 10
 
     def atualizar_tamanho_por_idade(self, idade):
-        if idade < 12:
+        if self.organismo.idade < 12:
             self.tamanho_utero = 5  
-        elif idade > 55:
+        elif self.organismo.idade > 55:
             self.tamanho_utero = 7  
         else:
             self.tamanho_utero = 10 
