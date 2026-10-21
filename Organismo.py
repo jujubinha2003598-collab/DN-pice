@@ -3,13 +3,13 @@ from Pele import Pele
 from Utero import Utero
 
 class Organismo:
-    def __init__(self, nome, idade, peso, energia = 100, intensidade_dor = 0, bioma = None, fome = 0):
+    def __init__(self, nome, idade, peso, energia = 100, intensidade_dor = 0, fome = 0):
         self.nome = nome
         self.idade = idade
         self.peso = peso 
         self.energia = energia
         self.intensidade_dor = intensidade_dor
-        self.bioma = bioma
+        self.bioma = Bioma
         self.pele = Pele                                                                                                               , )
         self.utero = Utero
         self.fome = fome
@@ -17,9 +17,12 @@ class Organismo:
     def movimentar(self, distancia: float):
         print(f"🏃 {self.nome} começou a se movimentar no bioma {self.bioma.nome}")
         gasto = self.bioma.dificuldade_solo() * distancia
+        if self.peso >= 70:
+            quilos_extras = self.peso - 70
+            gasto += gasto * (quilos_extras * 0.01)
         self.energia -= int(gasto)
         print(f"⚡ Gasto de energia. Energia atual: {self.energia}")
-        
+
     def hidratar(self, escolha):
         if escolha == "1":
             self.energia += 10
@@ -68,13 +71,16 @@ class Organismo:
         if self.energia > 0 :
             self.energia -= 10
             print(f"Deu mole perdeu energia. Energia atual {self.energia}")
+            
         elif (self.energia == 0) and (self.fome == 100):
+            print(f"Você está sem energia e com fome. {self.nome} não sobreviveu.")
 
-
+        elif (self.energia == 0) and (self.fome >= 60):
+            print(f"Você está sem energia e com fome. {self.nome} melhor comer e se hidratar.")
 
     def proteger(self, escolha):
         if escolha == "1":
-            if self.bioma == "2" and self.intensidade_dor >= 10:
+            if self.bioma == "2" and self.intensidade_dor >= 10 or self.bioma == "2":
                 self.intensidade_dor -= 5
                 print("Parabéns você escolheu certo!")
                 
@@ -83,7 +89,7 @@ class Organismo:
                 print("Ops! Você tinha opção melhor hein.")
 
         elif escolha == "2":
-            if self.bioma == "1" and self.intensidade_dor >= 10:
+            if self.bioma == "1" and self.intensidade_dor >= 10 or self.bioma == "1":
                 self.intensidade_dor -= 5
                 print("Parabéns você escolheu certo!")
                 
@@ -92,7 +98,7 @@ class Organismo:
                 print("Ops! Você tinha opção melhor hein.")
 
         elif escolha == "3":
-            if self.bioma == "3" and self.intensidade_dor >= 10:
+            if self.bioma == "3" and self.intensidade_dor >= 10 or self.bioma == "3":
                 self.intensidade_dor -= 5
                 print("Parabéns você escolheu certo!")
                 
