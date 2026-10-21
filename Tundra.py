@@ -1,7 +1,7 @@
 from Bioma import Bioma 
 import random 
-class Tundra(Bioma):
-    
+
+class Tundra(Bioma):    
     def __init__(self, espessura_neve: float):
         super().__init__(
             nome="Tundra", 
@@ -9,8 +9,8 @@ class Tundra(Bioma):
             regiao="Ártico", 
             temp_min=-20.0, 
             temp_max=0.0, 
-            especificidade="Permafrost"
-            tipo_solo=
+            especificidade="Periglacial", 
+            tipo_solo="Permafrost" 
         )
         self.espessura_neve = espessura_neve
         

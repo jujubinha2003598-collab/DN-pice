@@ -1,8 +1,12 @@
 from Bioma import Bioma
 from Pele import Pele
 from Utero import Utero
+from random import randint
+from Tundra import Tundra
+from FlorestaTrop import FlorestaTropical
+from Savana import Savana
 
-class Organismo:
+class Organismo():
     def __init__(self, nome, idade, peso, energia = 100, intensidade_dor = 0, fome = 0):
         self.nome = nome
         self.idade = idade
@@ -71,7 +75,7 @@ class Organismo:
         if self.energia > 0 :
             self.energia -= 10
             print(f"Deu mole perdeu energia. Energia atual {self.energia}")
-            
+
         elif (self.energia == 0) and (self.fome == 100):
             print(f"Você está sem energia e com fome. {self.nome} não sobreviveu.")
 
@@ -80,33 +84,34 @@ class Organismo:
 
     def proteger(self, escolha):
         if escolha == "1":
-            if self.bioma == "2" and self.intensidade_dor >= 10 or self.bioma == "2":
-                self.intensidade_dor -= 5
+            if self.bioma == "2" and self.intensidade_dor > 0 or self.bioma == "2":
+                self.intensidade_dor -= 1
                 print("Parabéns você escolheu certo!")
                 
             elif self.bioma == "1" or self.bioma == "3":
-                self.intensidade_dor += 5
-                print("Ops! Você tinha opção melhor hein.")
+                self.intensidade_dor += 1
+                print("Você usou o item errado para este bioma!")
 
         elif escolha == "2":
-            if self.bioma == "1" and self.intensidade_dor >= 10 or self.bioma == "1":
-                self.intensidade_dor -= 5
+            if self.bioma == "1" and self.intensidade_dor > 0 or self.bioma == "1":
+                self.intensidade_dor -= 1
                 print("Parabéns você escolheu certo!")
                 
             elif self.bioma == "2" or self.bioma == "3":
-                self.intensidade_dor += 5
-                print("Ops! Você tinha opção melhor hein.")
+                self.intensidade_dor += 1
+                print("Você usou o item errado para este bioma!")
 
         elif escolha == "3":
-            if self.bioma == "3" and self.intensidade_dor >= 10 or self.bioma == "3":
-                self.intensidade_dor -= 5
+            if self.bioma == "3" and self.intensidade_dor > 0 or self.bioma == "3":
+                self.intensidade_dor -= 1
                 print("Parabéns você escolheu certo!")
                 
             elif self.bioma == "1" or self.bioma == "2":
-                self.intensidade_dor += 5
-                print("Ops! Você tinha opção melhor hein.")
+                self.intensidade_dor += 1
+                print("Você usou o item errado para este bioma!")
+
         else:
             print("Opção inválida! Você não protegeu nada.")
-            self.intensidade_dor += 10
+            self.intensidade_dor += 3
 
        

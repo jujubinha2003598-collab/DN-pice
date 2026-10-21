@@ -2,9 +2,16 @@ from Organismo import Organismo
 import random 
 
 class Utero():
-    def __init__(self, tamanho_utero,  ):
+    def __init__(self, tamanho_utero):
         self.tamanho_utero = 10
 
+    def atualizar_tamanho_por_idade(self, idade):
+        if idade < 12:
+            self.tamanho_utero = 5  
+        elif idade > 55:
+            self.tamanho_utero = 7  
+        else:
+            self.tamanho_utero = 10 
 
     def menstruar(self):
         if self.organismo.idade >= 12 and self.organismo.idade <= 55:
