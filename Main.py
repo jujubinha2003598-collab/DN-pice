@@ -16,8 +16,6 @@ from Utero import Utero
         escolha = input("Escolha o bioma:")
         obj_organismo.proteger(escolha)
 
-
-
         print("\n--- Menu de Comidas ---\n")
         print("1. Carne podre")
         print("2. Carne Crua")
@@ -34,6 +32,14 @@ from Utero import Utero
         
         escolha = input("Escolha a proteção:")
         obj_organismo.proteger(escolha)
+
+        print("\n--- Menu de Hidratação ---\n")
+        print("1. Água Potável")
+        print("2. Água de coco")
+        print("3. Água suja")
+        
+        escolha = input("Escolha a hidratação:")
+        obj_organismo.hidratar(escolha)
 
 
 
