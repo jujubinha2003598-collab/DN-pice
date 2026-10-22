@@ -1,4 +1,4 @@
-drop database DNApice;
+drop database is exists DNApice;
 create database DNApice;
 use DNApice;
 
@@ -6,7 +6,7 @@ create table organismo(id_avatar int auto_increment primary key,
 			nome varchar(100) not null,
 			idade int not null,
 			peso decimal(10,2) not null,
-			energia int not null,#### e ver bioma em poo como obj
+			energia int not null,
 			intensidade_dor int not null
 			fome INT NOT NULL DEFAULT 0,
     		id_bioma INT NOT NULL,
@@ -28,7 +28,7 @@ create table utero(
 );
 
 create table bioma(id_bioma int auto_increment primary key,
-		id_avatar_bioma int, ###
+		id_avatar_bioma int, 
 		foreign key (id_avatar_bioma) references organismo(id_avatar),
         nome varchar(50) not null,
 		clima varchar(50) not null,
