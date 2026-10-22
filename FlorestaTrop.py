@@ -29,3 +29,7 @@ class FlorestaTropical(Bioma):
 
     def dificuldade_solo(self):
         return 0.5 + (self.umidade_relativa / 100) * 0.3
+
+    def aplicar_efeito_pele(self, organismo, usou_item_certo):
+        organismo.pele.sofrer_picadas(tem_repelente=usou_item_certo)
+
