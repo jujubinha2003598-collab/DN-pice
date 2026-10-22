@@ -78,45 +78,8 @@ class Organismo():
             
 
     def proteger(self, escolha):
-        if escolha == 1: #protetor solar
-            if isinstance(self.bioma, Savana):
-                self.intensidade_dor = max(0, self.intensidade_dor - 1)
-                print("Parabéns, você usou o protetor solar e protegeu a pele na Savana!")
-
-            elif isinstance(self.bioma, FlorestaTropical): 
-                self.intensidade_dor += 1
-                print("Você usou o item errado! Muitas picadas de mosquito na Floresta Tropical aumentaram sua dor.")
-
-             elif isinstance(self.bioma, Tundra): 
-                self.intensidade_dor += 1
-                print("Você usou o item errado! O frio da Tundra aumentou sua dor.")
-
-        elif escolha == 2: #repelente
-            elif isinstance(self.bioma, FlorestaTropical): 
-                self.intensidade_dor = max(0, self.intensidade_dor - 1)
-                print("Parabéns, você usou o repelente e afastou os insetos da Floresta Tropical!")
-
-            if isinstance(self.bioma, Savana): 
-                self.intensidade_dor += 1
-                print("Você usou o item errado! O sol da Savana aumentou sua dor.")
-
-            elif isinstance(self.bioma, Tundra):
-                self.intensidade_dor += 1
-                print("Você usou o item errado! O frio da Tundra aumentou sua dor.")
-
-        elif escolha == 3: #blusa de frio
-             elif isinstance(self.bioma, Tundra): 
-                self.intensidade_dor = max(0, self.intensidade_dor - 1)
-                print("Parabéns, você vestiu a blusa de frio e se aqueceu na Tundra!")
-
-            elif isinstance(self.bioma, FlorestaTropical): 
-                self.intensidade_dor += 1
-                print("Você usou o item errado! Muitas picadas de mosquito na Floresta Tropical aumentaram sua dor.")
-
-            if isinstance(self.bioma, Savana):
-                self.intensidade_dor += 1
-                print("Você usou o item errado! O calor escaldante da Savana aumentou sua dor.")
-
+        if escolha in (1, 2, 3):
+        self.bioma.proteger(self, escolha)
         else:
             print("Opção inválida! Você não se protegeu.")
             self.intensidade_dor += 3
