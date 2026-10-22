@@ -1,4 +1,3 @@
-from Bioma import Bioma
 from FlorestaTrop import FlorestaTropical
 from Savana import Savana
 from Tundra import Tundra
@@ -13,7 +12,11 @@ class Sistema():
         print("\n===== Status de Saúde dos seus Avatares =====\n")
         for avatar in self.avatares:
             print(f"| Nome: {avatar.nome} \n| Idade: {avatar.idade} anos \n| Peso: {avatar.peso} kg \n| Energia: {avatar.energia} \n| Fome: {avatar.fome} \n| Intensidade da dor: {avatar.intensidade_dor}")
-        
+
+    def criar_avatar(self, nome, idade, peso, indice_bioma):
+        bioma = self.biomas[indice_bioma]
+        self.avatares.append(Organismo(nome, idade, peso, bioma))
+    
     def criar_bioma(self, escolha):
         if escolha == 1:#floresta tropical
             tipo_solo = input("Informe o tipo do solo:")
@@ -29,11 +32,13 @@ class Sistema():
             espessura_neve = int(input("Informe a espessura da neve:"))
             obj_bioma_t = Tundra(espessura_neve)#cria o bioma
             self.biomas.append(obj_bioma_t)#adiciona na lista de biomas
+        else:
+            print("Opção inválida")
             
     def exibir_dados(self):
         print("\n===== DADOS DO BIOMA =====")
         for bioma in self.biomas:
-            bioma.temp_atual = self.calcular_temperatura()
+            bioma.temp_atual = bioma.calcular_temperatura()
             print(f"| Nome: {bioma.nome} \n| Temperatura: {bioma.temp_atual}°C \n| Clima: {bioma.clima} \n| Região: {bioma.regiao} \n| Especificidade: {bioma.especificidade} \n| Tipo do solo: {self.tipo_solo }")
             if bioma.nome == "Floresta Tropical":
                 print(f"| Umidade relativa: {bioma.umidade_relativa} \n| Densidade da Copada: {bioma.densidade_copada}")
