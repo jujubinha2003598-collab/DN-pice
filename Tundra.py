@@ -24,3 +24,5 @@ class Tundra(Bioma):
     def dificuldade_solo(self):
         return 1.5 + (self.espessura_neve / 100) * 0.5
     
+    def aplicar_efeito_pele(self, organismo, usou_item_certo):
+        organismo.pele.enfrentar_frio(tem_blusa=usou_item_certo)
