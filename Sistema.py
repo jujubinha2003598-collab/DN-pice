@@ -58,6 +58,9 @@ class Sistema():
     def fazer_funcoes_pele(self):
         for avatar in avatares:
             print(f"Veja os status da pele do avatar {avatar.nome}:")
+            if isinstance(self.bioma, FlorestaTropical): 
+                avatar.pele.sofrer_picadas()
+                #vai mostrar que foi picado desde a primeira vez que começar a jogar, se ele não tiver se protegido
             avatar.pele.tomar_sol()
-            avatar.pele.sofrer_picadas()
+            
             avatar.pele.enfrentar_frio()### falta organizar por bioma aqui e no organismo
