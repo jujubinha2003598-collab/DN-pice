@@ -3,7 +3,9 @@ import random
 
 class FlorestaTropical(Bioma):
 
-    def __init__(self, tipo_solo: str, umidade_relativa: float = 85.0, densidade_copada = 90.0):####
+    item_correto = 2
+    
+    def __init__(self, tipo_solo: str, umidade_relativa: float = 85.0, densidade_copada: float = 90.0):
         super().__init__(
             nome="Floresta Tropical",
             clima="Equatorial / Tropical Úmido",
@@ -26,4 +28,4 @@ class FlorestaTropical(Bioma):
         return round(temperatura_atual, 1)
 
     def dificuldade_solo(self):
-        return 0.5      
+        return 0.5 + (self.umidade_relativa / 100) * 0.3
