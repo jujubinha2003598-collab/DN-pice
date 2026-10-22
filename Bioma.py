@@ -21,14 +21,22 @@ class Bioma(ABC):
     @abstractmethod
     def dificuldade_solo(self):
         pass
+
+    @abstractmethod
+    def aplicar_efeito(self, organismo, usou_item_certo):
+        pass
     
     def proteger(self, organismo, escolha):
         if escolha == self.item_correto:
             organismo.intensidade_dor = max(0, organismo.intensidade_dor - 1)
-            print(f"Parabéns, {organismo.nome}! Você se protegeu na {self.nome}!")
+            print(f"Parabéns, você se defendeu!")
+            acertou = True
         else:
             organismo.intensidade_dor += 1
-            print(f"Você usou o item errado! Sua dor aumentou na {self.nome}.")
+            print(self.mensagens_erro[escolha])
+            acertou = False
+
+        self.aplicar_efeito_pele(organismo, acertou)
 
     def exibir_dados(self):
         temp_atual = self.calcular_temperatura()
