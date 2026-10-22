@@ -15,7 +15,7 @@ class Organismo():
         self.intensidade_dor = 0
         self.bioma = Bioma()
         self.pele = Pele (melanina = random.choice(["baixa", "média", "alta"])) 
-        self.utero = Utero()
+        self.utero = Utero(self)
         self.fome = 0
 
 
