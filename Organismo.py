@@ -1,20 +1,19 @@
-from Bioma import Bioma
 from Pele import Pele
 from Utero import Utero
-from random import randint, random
+from random import choice
 from Tundra import Tundra
 from FlorestaTrop import FlorestaTropical
 from Savana import Savana
 
 class Organismo():
-    def __init__(self, nome, idade, peso):
+    def __init__(self, nome, idade, peso, bioma):
         self.nome = nome
         self.idade = idade
         self.peso = peso 
         self.energia = 100
         self.intensidade_dor = 0
-        self.bioma = Bioma()
-        self.pele = Pele (melanina = random.choice(["baixa", "média", "alta"])) 
+        self.bioma = bioma
+        self.pele = Pele (melanina = choice(["baixa", "média", "alta"])) 
         self.utero = Utero(self)
         self.fome = 0
 
@@ -82,42 +81,42 @@ class Organismo():
             
 
     def proteger(self, escolha):
-        if escolha == 1:
-            if self.bioma == 2: # Savana
+        if escolha == 1: #protetor solar
+            if isinstance(self.bioma, Savana):
                 self.intensidade_dor = max(0, self.intensidade_dor - 1)
                 print("Parabéns, você usou o protetor solar e protegeu a pele na Savana!")
 
-            elif self.bioma == 1: # Floresta Tropical
+            elif isinstance(self.bioma, FlorestaTropical): 
                 self.intensidade_dor += 1
                 print("Você usou o item errado! Muitas picadas de mosquito na Floresta Tropical aumentaram sua dor.")
 
-            elif self.bioma == 3: # Tundra
+             elif isinstance(self.bioma, Tundra): 
                 self.intensidade_dor += 1
                 print("Você usou o item errado! O frio da Tundra aumentou sua dor.")
 
-        elif escolha == 2:
-            if self.bioma == 1: # Floresta Tropical
+        elif escolha == 2: #repelente
+            elif isinstance(self.bioma, FlorestaTropical): 
                 self.intensidade_dor = max(0, self.intensidade_dor - 1)
                 print("Parabéns, você usou o repelente e afastou os insetos da Floresta Tropical!")
 
-            elif self.bioma == 2: # Savana
+            if isinstance(self.bioma, Savana): 
                 self.intensidade_dor += 1
                 print("Você usou o item errado! O sol da Savana aumentou sua dor.")
 
-            elif self.bioma == 3: # Tundra
+            elif isinstance(self.bioma, Tundra):
                 self.intensidade_dor += 1
                 print("Você usou o item errado! O frio da Tundra aumentou sua dor.")
 
-        elif escolha == 3:
-            if self.bioma == 3: # Tundra
+        elif escolha == 3: #blusa de frio
+             elif isinstance(self.bioma, Tundra): 
                 self.intensidade_dor = max(0, self.intensidade_dor - 1)
                 print("Parabéns, você vestiu a blusa de frio e se aqueceu na Tundra!")
 
-            elif self.bioma == 1: # Floresta Tropical
+            elif isinstance(self.bioma, FlorestaTropical): 
                 self.intensidade_dor += 1
                 print("Você usou o item errado! Muitas picadas de mosquito na Floresta Tropical aumentaram sua dor.")
 
-            elif self.bioma == 2: # Savana
+            if isinstance(self.bioma, Savana):
                 self.intensidade_dor += 1
                 print("Você usou o item errado! O calor escaldante da Savana aumentou sua dor.")
 
