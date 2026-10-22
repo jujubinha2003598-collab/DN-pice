@@ -1,4 +1,4 @@
-drop database is exists DNApice;
+drop database if exists DNApice;
 create database DNApice;
 use DNApice;
 
