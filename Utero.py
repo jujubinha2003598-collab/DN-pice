@@ -4,8 +4,8 @@ import random
 class Utero():
     def __init__(self, organismo, tamanho_utero = 10, saude =  10):
         self.organismo = organismo
-        self.tamanho_utero = self.tamanho_utero
-        self.saude = self.saude
+        self.tamanho_utero = tamanho_utero
+        self.saude = saude
 
     def atualizar_tamanho_por_idade(self):
         if self.organismo.idade < 12:

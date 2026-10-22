@@ -10,7 +10,7 @@ from Sistema import Sistema
 
 sistema = Sistema()
 
-print("Seja bem vindo(a) ao nosso Jogo do DNÁpice! \n Escolha seu bioma, avatar, e viva uma aventura cheia de aprendizados!")
+print("Seja bem vindo(a) ao BioLógica! \n Escolha seu bioma, avatar, e viva uma aventura cheia de aprendizados!")
 
 while True:
         play = input("Deseja dar play na rodada? (s/n)")
@@ -24,10 +24,12 @@ while True:
                         obj_avatar = Organismo(nome, idade, peso)#criando o avatar
                         sistema.avatares.append(obj_avatar)#adicionando o avatar criado na lista de avatares
                         print("Avatar criado com sucesso!")
-
+                        #pele e útero já são criados juntos dentro do avatar na classe organismo
 
                 elif opcao == 2:
-                        sistema.ver_status_saude()
+                        sistema.ver_status_saude()#vê a saúde em geral
+                        sistema.fazer_funcoes_utero()#chama as funções do útero e mostra
+                        sistema.fazer_funcoes_pele()#chama as funções da pele e mostra
 
                 elif opcao == 3:
                         print("\n--- Biomas ---\n")

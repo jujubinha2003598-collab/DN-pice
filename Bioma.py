@@ -3,7 +3,7 @@ import random
 
 class Bioma(ABC):
 
-    item_correto = None#################
+    item_correto = None
 
     def __init__(self, nome: str, clima: str, regiao: str, temp_min: float, temp_max: float, especificidade: str, tipo_solo):
         self.nome = nome
@@ -31,6 +31,8 @@ class Bioma(ABC):
             organismo.intensidade_dor = max(0, organismo.intensidade_dor - 1)
             print(f"Parabéns, você se defendeu!")
             acertou = True
+
+            
         else:
             organismo.intensidade_dor += 1
             print("errouu")

@@ -2,6 +2,8 @@ from FlorestaTrop import FlorestaTropical
 from Savana import Savana
 from Tundra import Tundra
 from Organismo import Organismo
+from Pele import Pele
+from Utero import Utero
 
 class Sistema():
     def __init__(self):
@@ -45,3 +47,17 @@ class Sistema():
                 print(f"| Nível de queimada: {bioma.nivel_queimada}")
             elif isinstance(bioma, Tundra):
                 print(f"| Espessura da neve: {bioma.espessura_neve}")
+
+    def fazer_funcoes_utero(self):
+        for avatar in avatares:
+            print(f"Veja os status do útero do avatar {avatar.nome}:")
+            avatar.utero.atualizar_tamanho_por_idade()
+            avatar.utero.menstruar()
+            avatar.utero.verificar_status()
+
+    def fazer_funcoes_pele(self):
+        for avatar in avatares:
+            print(f"Veja os status da pele do avatar {avatar.nome}:")
+            avatar.pele.tomar_sol()
+            avatar.pele.sofrer_picadas()
+            avatar.pele.enfrentar_frio()### falta organizar por bioma aqui e no organismo

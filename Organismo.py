@@ -9,9 +9,9 @@ class Organismo():
         self.peso = peso 
         self.energia = 100
         self.intensidade_dor = 0
-        self.bioma = bioma
+        self.bioma = bioma#### tem que criar
         self.pele = Pele (melanina = choice(["baixa", "média", "alta"])) 
-        self.utero = Utero(self)
+        self.utero = Utero()
         self.fome = 0
 
 
