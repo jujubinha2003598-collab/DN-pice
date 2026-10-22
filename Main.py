@@ -98,9 +98,3 @@ while True:
                 break     
         else:
                 print("Opção inválida!")
-
-
-
-###FALTA CRIAR NO MAIN:
-#mÉTODOS DO ÚTERO 
-#MÉTODOS DA PELE
