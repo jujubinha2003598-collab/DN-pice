@@ -1,6 +1,7 @@
 from Bioma import Bioma
 import random 
 class Savana(Bioma):
+    item_correto = 1
     def __init__(self, nivel_queimada: int):
         super().__init__(
             nome="Savana",
@@ -15,7 +16,8 @@ class Savana(Bioma):
     
     def calcular_temperatura(self) -> float:
         temperatura_atual = random.uniform(self.temp_min, self.temp_max)
+        temperatura_atual += self.nivel_queimada * 1.5
         return round(temperatura_atual, 1)
     
     def dificuldade_solo(self) -> float:
-        return 1.2
+        return 1.2 + self.nivel_queimada * 0.1
