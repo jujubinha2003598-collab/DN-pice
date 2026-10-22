@@ -9,7 +9,7 @@ create table organismo(id_avatar int auto_increment primary key,
 			energia int not null,
 			intensidade_dor int not null
 			fome INT NOT NULL DEFAULT 0,
-    		id_bioma INT NOT NULL,
+    		id_bioma INT NOT NULL,############pode dar erro
     		FOREIGN KEY (id_bioma) REFERENCES bioma(id_bioma)
 	);
 
@@ -79,3 +79,12 @@ VALUES ('Laura', 15, 52.5, 1);
 INSERT INTO pele (id_avatar_pele, melanina) VALUES (1, 'media');
 INSERT INTO utero (id_avatar_utero) VALUES (1);
 
+
+
+SELECT * FROM bioma;
+
+SELECT id_avatar_pele as "ID do seu avatar" from pele WHERE melanina = 'media';
+
+SELECT id_avatar, nome, idade, peso FROM organismo;
+
+SELECT energia, intensidade_dor, fome FROM organismo;

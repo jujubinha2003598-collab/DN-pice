@@ -15,29 +15,30 @@ print("Seja bem vindo(a) ao BioLógica! \n Escolha seu bioma, avatar, e viva uma
 while True:
         play = input("Deseja dar play na rodada? (s/n)")
         if play == 's':
-                opcao = int(input("O que deseja fazer? \n1)Criar um avatar \n2)Ver status do avatar \n3)Escolher um bioma \n4)Ver status do bioma \n5)Fazer nada (POR FAVOR, APENAS SE O SEU AVATAR EXISTIR) \n6)Alimentar \n7)Hidratar \n8)Proteger \n9) Movimentar \n10)Sair"))
+                opcao = int(input("O que deseja fazer? \n1)Escolher um bioma(POR FAVOR, ESCOLHA SEU BIOMA PRIMEIRO!) \n2)Criar um avatar \n3)Ver status do avatar \n4)Ver status do bioma \n5)Fazer nada (POR FAVOR, APENAS SE O SEU AVATAR EXISTIR) \n6)Alimentar \n7)Hidratar \n8)Proteger \n9) Movimentar \n10)Sair"))
 
                 if opcao == 1:
-                        nome = input("Dê um nome:")
-                        idade = input("Informe a idade:")
-                        peso = input("Informe o peso:")
-                        obj_avatar = Organismo(nome, idade, peso)#criando o avatar
-                        sistema.avatares.append(obj_avatar)#adicionando o avatar criado na lista de avatares
-                        print("Avatar criado com sucesso!")
-                        #pele e útero já são criados juntos dentro do avatar na classe organismo
-
-                elif opcao == 2:
-                        sistema.ver_status_saude()#vê a saúde em geral
-                        sistema.fazer_funcoes_utero()#chama as funções do útero e mostra
-                        sistema.fazer_funcoes_pele()#chama as funções da pele e mostra
-
-                elif opcao == 3:
                         print("\n--- Biomas ---\n")
                         print("1. Floresta Tropical")
                         print("2. Savana")
                         print("3. Tundra")
                         escolha = int(input("Escolha o número do seu bioma:"))
                         sistema.criar_bioma(escolha)
+
+                elif opcao == 2:
+                        nome = input("Dê um nome:")
+                        idade = input("Informe a idade:")
+                        peso = input("Informe o peso:")
+                        bioma = input("Informe o nome do bioma que você tinha escolhido (Floresta Tropical, Savana, Tundra):")
+                        obj_avatar = Organismo(nome, idade, peso, bioma)#criando o avatar
+                        sistema.avatares.append(obj_avatar)#adicionando o avatar criado na lista de avatares
+                        print("Avatar criado com sucesso!")
+                        #pele e útero já são criados juntos dentro do avatar na classe organismo
+
+                elif opcao == 3:
+                        sistema.ver_status_saude()#vê a saúde em geral
+                        sistema.fazer_funcoes_utero()#chama as funções do útero e mostra
+                        sistema.fazer_funcoes_pele()#chama as funções da pele e mostra
 
                 elif opcao == 4:
                         sistema.exibir_dados_bioma()
