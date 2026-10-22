@@ -2,7 +2,10 @@ from Bioma import Bioma
 import random 
 
 class Tundra(Bioma):    
-    def __init__(self, espessura_neve: float):
+
+    item_correto = 3
+    
+    def __init__(self, espessura_neve: float = 20.0):
         super().__init__(
             nome="Tundra", 
             clima="Frio Polar", 
@@ -19,5 +22,5 @@ class Tundra(Bioma):
         return round(temperatura_atual, 1)
 
     def dificuldade_solo(self):
-        return 1.5
+        return 1.5 + (self.espessura_neve / 100) * 0.5
     
