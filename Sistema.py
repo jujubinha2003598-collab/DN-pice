@@ -38,7 +38,10 @@ class Sistema():
     def exibir_dados(self):
         print("\n===== DADOS DO BIOMA =====")
         for bioma in self.biomas:
-            bioma.temp_atual = bioma.calcular_temperatura()
-            print(f"| Nome: {bioma.nome} \n| Temperatura: {bioma.temp_atual}°C \n| Clima: {bioma.clima} \n| Região: {bioma.regiao} \n| Especificidade: {bioma.especificidade} \n| Tipo do solo: {self.tipo_solo }")
+            bioma.exibir_dados()
             if bioma.nome == "Floresta Tropical":
                 print(f"| Umidade relativa: {bioma.umidade_relativa} \n| Densidade da Copada: {bioma.densidade_copada}")
+            elif isinstance(bioma, Savana):
+                print(f"| Nível de queimada: {bioma.nivel_queimada}")
+            elif isinstance(bioma, Tundra):
+                print(f"| Espessura da neve: {bioma.espessura_neve}")
