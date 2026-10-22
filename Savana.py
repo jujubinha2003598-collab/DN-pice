@@ -21,3 +21,7 @@ class Savana(Bioma):
     
     def dificuldade_solo(self) -> float:
         return 1.2 + self.nivel_queimada * 0.1
+
+ 
+    def aplicar_efeito_pele(self, organismo, usou_item_certo):
+        organismo.pele.tomar_sol(tem_protetor_solar=usou_item_certo, bioma=self.nome)
