@@ -1,9 +1,6 @@
 from Pele import Pele
 from Utero import Utero
 from random import choice
-from Tundra import Tundra
-from FlorestaTrop import FlorestaTropical
-from Savana import Savana
 
 class Organismo():
     def __init__(self, nome, idade, peso, bioma):
