@@ -33,7 +33,7 @@ class Bioma(ABC):
             acertou = True
         else:
             organismo.intensidade_dor += 1
-            print(self.mensagens_erro[escolha])
+            print("errouu")
             acertou = False
 
         self.aplicar_efeito_pele(organismo, acertou)
