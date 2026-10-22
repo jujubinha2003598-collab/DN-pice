@@ -25,6 +25,7 @@ while True:
                         sistema.avatares.append(obj_avatar)#adicionando o avatar criado na lista de avatares
                         print("Avatar criado com sucesso!")
 
+
                 elif opcao == 2:
                         sistema.ver_status_saude()
 
@@ -75,7 +76,7 @@ while True:
                         escolha = int(input("Escolha o número da sua proteção:"))
                         indice = int(input("Informe o índice do avatar que você quer proteger:"))
                         confirmacao = sistema.avatares[indice]
-                        confirmacao.proteger(escolha)
+                        confirmacao.proteger(confirmacao, escolha)
                         
                 elif opcao == 9:
                         indice = int(input("Informe o índice do avatar que você quer movimentar:"))
@@ -85,19 +86,14 @@ while True:
                         
                 elif opcao == 10:
                         print("Ok, volte sempre!")
-                                break
+                        break
                         
                 else:
-                                print("Opção inválida!")
+                        print("Opção inválida!")
                         
         elif play == 'n':
-                resposta = ("Deseja sair? s/n")
-                       if resposta == 's':
-                                print("Ok, volte sempre!")
-                                break
-                       elif resposta == 'n':
-                               pass
-                               #como faz pra voltar???       
+                print("Ok, volte sempre!")
+                break     
         else:
                 print("Opção inválida!")
 

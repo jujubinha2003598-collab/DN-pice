@@ -49,5 +49,3 @@ class Utero():
             print("Você está na fase pós-menopausa")
         else:
             print("Que útero abençoado! Está super fértil")
-
-    
